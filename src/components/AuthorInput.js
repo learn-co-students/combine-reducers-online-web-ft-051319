@@ -42,4 +42,4 @@ export class AuthorInput extends Component {
   }
 };
 
-export default connect(null, { addAuthor })(AuthorInput);
+export default connect((state) => ({author: state.authorName}), { addAuthor })(AuthorInput);

@@ -15,7 +15,7 @@ export class App extends Component {
           <Authors />
         </div>
         <div>
-          <h2>Book</h2>
+          <h2>Book</h2> 
           <BookInput />
           <Books />
         </div>
