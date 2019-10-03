@@ -4,16 +4,20 @@ import { connect } from 'react-redux';
 class Authors extends Component {
 
   render() {
-
-    let authors = this.props.authors.map(author => <li key={author.id}>{author.authorName}</li>);
-
-    return (
-      <div>
-        <ul>
-          {authors}
-        </ul>
-      </div>
-    );
+   // debugger
+  //  let authors = this.props.authors.map(author => <li key={author.id}>{author.authorName}</li>);
+  //  if(this.props.authors.length > 0){
+    //  let authors = this.props.authors.map(author => (<li key={author.id}>{author.authorName}</li>));
+      return (
+        <div>
+          <ul>
+            {this.props.authors.map(author => <li key={author.id}>{author.authorName}</li>)}
+          </ul>
+        </div>
+      )
+   // }else{
+   //   return ( <div></div> )
+   // }
   }
 };
 
