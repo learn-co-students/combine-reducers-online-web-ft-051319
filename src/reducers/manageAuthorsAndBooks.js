@@ -1,39 +1,45 @@
-export default function bookApp(
-  state = {
-    authors: [],
-    books: []
-  },
-  action
-) {
-  let idx;
-  switch (action.type) {
-    case "ADD_BOOK":
-      return {
-        ...state,
-        books: [...state.books, action.book]
-      };
+// before refactoring single reducer with combineReducers
 
-    case "REMOVE_BOOK":
-      idx = state.books.findIndex(book => book.id === action.id);
-      return {
-        ...state,
-        books: [...state.books.slice(0, idx), ...state.books.slice(idx + 1)]
-      };
+// export default function bookApp(
+//   state = {
+//     authors: [],
+//     books: []
+//   },
+//   action
+// ) {
+//   let idx;
+//   switch (action.type) {
+//     case "ADD_BOOK":
+//       return {
+//         ...state,
+//         authors: [...state.authors],
+//         books: [...state.books, action.book]
+//       };
 
-    case "ADD_AUTHOR":
-      return {
-        ...state,
-        authors: [...state.authors, action.author]
-      };
+//     case "REMOVE_BOOK":
+//       idx = state.books.findIndex(book => book.id === action.id);
+//       return {
+//         ...state,
+//         authors: [...state.authors],
+//         books: [...state.books.slice(0, idx), ...state.books.slice(idx + 1)]
+//       };
 
-    case "REMOVE_AUTHOR":
-      idx = state.authors.findIndex(author => author.id === action.id);
-      return {
-        ...state,
-        authors: [...state.authors.slice(0, idx), ...state.authors.slice(idx + 1)]
-      };
+//     case "ADD_AUTHOR":
+//       return {
+//         ...state,
+//         books: [...state.books],
+//         authors: [...state.authors, action.author]
+//       };
 
-    default:
-      return state;
-  }
-}
+//     case "REMOVE_AUTHOR":
+//       idx = state.authors.findIndex(author => author.id === action.id);
+//       return {
+//         ...state,
+//         books: [...state.books],
+//         authors: [...state.authors.slice(0, idx), ...state.authors.slice(idx + 1)]
+//       };
+
+//     default:
+//       return state;
+//   }
+// }
